@@ -10,9 +10,9 @@ class ProgressUpdatesController < ApplicationController
     @progress_update = current_user.progress.build(progress_update_params)
 
     if @progress_update.save
-      redirect_to progress_updates_path, notice: 'Progress update was successful.'
+      redirect_back fallback_location: progress_updates_path, notice: 'Progress update was successful.'
     else
-      render :index, alert: 'Progress update was not successful.'
+      render :index, alert: 'Progress update was not successful. Please try again'
     end
   end
 

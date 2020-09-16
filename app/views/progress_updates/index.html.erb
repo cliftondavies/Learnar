@@ -1,0 +1,54 @@
+<div>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">TWEETS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">PHOTOS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">VIDEOS</a>
+    </li>
+  </ul>
+
+  <%= form_with model: @progress_update, local: true do |f| %>
+    <% if @progress_update.errors.full_messages.any? %>
+      <p class="errors"><%= "Post could not be saved. #{@progress_update.errors.full_messages.join('. ')}" %></p>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :text, 'ADD PROGRESS' %>
+      <%= f.text_field :text, class:"form-control" placeholder: 'Write new progress update' %>
+    </div>
+    <%= f.submit 'Share Progress', class: "btn btn-primary" %>
+  <% end %>
+
+  <section class="new-updates">
+    <h2>4 NEW PROGRESS UPDATES</h2>
+    <ul class="list-unstyled">
+      <% @progress_updates.each do |progress| %>
+        <li class="media">
+          user_photo(progress.author)
+          <div class="media-body">
+            <h5 class="mt-0 mb-1"><%= progress.author.username %><span> <%= time_ago_in_words(progress.created_at) %></span></h5>
+            <%= progress.text %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</div>
+
+<section class="who-to-follow">
+  <h2>WHO TO FOLLOW</h2>
+  <ul class="list-unstyled">
+    <% current_user.users_to_follow.each do |user| %>
+      <li class="media">
+        user_photo(user, class: "rounded-circle")
+        <div class="media-body">
+          <h5 class="mt-0 mb-1"><%= user.username %></h5>
+          Followed by <%= user.followers.one %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</section>

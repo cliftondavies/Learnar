@@ -23,4 +23,8 @@ class User < ApplicationRecord
 
   scope :most_recent, -> { order(created_at: :desc) }
   scope :random, -> { take(3) }
+
+  def users_to_follow
+    where.not(id: (followeds + [self])).most_recent
+  end
 end

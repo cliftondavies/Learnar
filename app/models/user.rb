@@ -18,5 +18,5 @@ class User < ApplicationRecord
   has_many :followeds, through: :outgoings
 
   has_many :progress_updates, foreign_key: :author_id, inverse_of: :author, dependent: :destroy
-  has_many :likes, dependent: :destroy
+  has_many :likes, inverse_of: :user, dependent: :destroy
 end

@@ -6,4 +6,6 @@ class ProgressUpdate < ApplicationRecord
   has_many :likes, inverse_of: :progress_update, dependent: :destroy
 
   belongs_to :author, class_name: 'User'
+
+  scope :most_recent, -> { order(created_at: :desc) }
 end

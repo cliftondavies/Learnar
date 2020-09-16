@@ -20,4 +20,7 @@ class User < ApplicationRecord
 
   has_many :progress_updates, foreign_key: :author_id, inverse_of: :author, dependent: :destroy
   has_many :likes, inverse_of: :user, dependent: :destroy
+
+  scope :most_recent, -> { order(created_at: :desc) }
+  scope :random, -> { take(3) }
 end

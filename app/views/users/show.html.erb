@@ -1,0 +1,68 @@
+<div>
+  <img src="..." class="img-fluid" alt="User cover image">
+
+  <nav class="nav">
+    <a class="nav-link active" href="#">PROGRESS UPDATES</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">PHOTOS</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FOLLOWING</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FOLLOWERS</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FAVOURITES</a>
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">LISTS</a>
+  </nav>
+
+  <section class="user-updates">
+    <h2>RECENT PROGRESS FROM <%= @user.full_name.upcase %></h2>
+
+    <ul class="list-unstyled">
+      <% @progress_updates.each do |progress| %>
+        <li class="media">
+          user_photo(progress.author)
+
+          <div class="media-body">
+            <h5 class="mt-0 mb-1"><%= progress.author.full_name %><span> <%= time_ago_in_words(progress.created_at) %></span></h5>
+            <%= progress.text %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</div>
+
+<section class="profile-details">
+  <section class="overview">
+    <div>
+      <button>add fa icon for + </button>
+
+      user_photo(@user, class: "rounded-circle")
+
+      <button>add fa icon for menu</button>
+    </div>
+
+    <h2><%= @user.full_name.upcase %> <span><%= @user.username %></span></h2>
+
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item"><%= @update_count %> <span>Updates</span> </li>
+      <li class="list-group-item"><%= following_count %> <span>Following</span> </li>
+      <li class="list-group-item"><%= follower_count %> <span>Followers</span> </li>
+    </ul>
+  </section>
+
+  <section class="followed-by">
+    <h2>FOLLOWED BY</h2>
+
+    <ul class="list-unstyled">
+      <% current_user.users_to_follow.each do |user| %>
+        <li class="media">
+          user_photo(user, class: "rounded-circle")
+
+          <div class="media-body">
+            <h5 class="mt-0 mb-1"><%= user.full_name %></h5>
+            <%= "@#{user.username}" %>
+
+            <button>with fa + icon</button>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<section>

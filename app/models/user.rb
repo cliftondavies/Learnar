@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def shared_following(user)
     user.followed.where(id: [followers]).take(1)
   end
+
+  def followed?(user)
+    followeds.exist?(user.id)
+  end
 end

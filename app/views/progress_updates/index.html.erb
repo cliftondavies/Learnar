@@ -46,8 +46,10 @@
           user_photo(user, class: "rounded-circle")
 
           <div class="media-body">
-            <h5 class="mt-0 mb-1"><%= user.full_name %></h5>
-            <%= shared_user = user.shared_following(current_user) ? "Followed by #{shared_user.full_name}" : "" %>
+            <h5 class="mt-0 mb-1">
+              <%= user.full_name %>
+              <%= user_subtext(user) %>
+            </h5>
           </div>
         </li>
       <% end %>

@@ -14,4 +14,23 @@ module ApplicationHelper
   def following_count(user)
     user.followeds.size
   end
+
+  def user_subtext(user)
+    if current_page?(progress_updates_path)
+      (shared_user = user.shared_following(current_user)) ? "Followed by #{shared_user.full_name}" : ''
+    else
+      "@#{user.username}"
+    end
+  end
+
+  def follow_or_unfollow_btn(user)
+    return if current_page?(progress_updates_path)
+
+    following = Following.find_by(followed: user, follower: current_user)
+    if following
+      button_to('Unfollow!', user_following_path(following, user), method: :delete)
+    else
+      button_to('Follow!', user_followings_path(user))
+    end
+  end
 end

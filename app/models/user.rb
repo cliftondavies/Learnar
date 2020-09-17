@@ -21,11 +21,13 @@ class User < ApplicationRecord
   has_many :progress_updates, foreign_key: :author_id, inverse_of: :author, dependent: :destroy
   has_many :likes, inverse_of: :user, dependent: :destroy
 
-  scope :most_recent, -> { order(created_at: :desc) }
   scope :random, -> { take(3) }
-  scope :one, -> { take(1) }
 
   def users_to_follow
-    User.where.not(id: (followeds + [self])).most_recent
+    User.where.not(id: (followeds + [self])).order(created_at: :desc)
+  end
+
+  def shared_following(user)
+    user.followed.where(id: [followers]).take(1)
   end
 end

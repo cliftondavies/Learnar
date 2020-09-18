@@ -1,0 +1,20 @@
+<div class="side-bar">
+  <div class="media">
+    <%= user_photo(current_user) %>
+
+    <div class="media-body">
+      <h5 class="mt-0"><%= current_user.full_name.updcase %></h5>
+    </div>
+  </div>
+
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item"><%= following_count(current_user) %> <span>Following</span> </li>
+    <li class="list-group-item"><%= follower_count(current_user) %> <span>Followers</span> </li>
+  </ul>
+
+  <nav class="nav flex-column">
+    <%= link_to(progress_updates_path, class: 'nav-link active') { icon('fas', 'home', 'HOME') } %>
+    <%= link_to(user_path(current_user), class: 'nav-link') { icon('fas', 'user', 'PROFILE') } %>
+    <%= link_to(destroy_user_session_path, method: :delete) { icon('fas', 'sign-out-alt', 'SIGN OUT') } %>
+  </nav>
+</div>

@@ -5,14 +5,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="overall-wrap">
+      <%= render 'layouts/side_bar' if signed_in? %>
+      <%= render 'layouts/welcome' unless signed_in? %>
 
-    <%= yield %>
+      <div class="nav-main-wrap">
+        <%= render 'layouts/nav' if signed_in? %>
+        <%= render 'layouts/flash' %>
+
+        <main class="main">
+          <%= yield %>
+        </main>
+      </div>
+
+      <%= render 'layouts/footer' unless signed_in? %>
+    </div>
   </body>
 </html>

@@ -9,5 +9,6 @@ class ProgressUpdate < ApplicationRecord
 
   belongs_to :author, class_name: 'User'
 
+  scope :eager_load, -> { includes(:author) }
   scope :most_recent, -> { order(created_at: :desc) }
 end

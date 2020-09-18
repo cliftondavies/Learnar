@@ -2,9 +2,7 @@
   <%= render 'shared/nav' %>
 
   <%= form_with model: @progress_update, local: true do |f| %>
-    <% if @progress_update.errors.full_messages.any? %>
-      <p class="errors"><%= "Post could not be saved. #{@progress_update.errors.full_messages.join('. ')}" %></p>
-    <% end %>
+    <%= render 'shared/errors', obj: @progress_update %>
 
     <div class="form-group">
       <%= f.label :text, 'ADD PROGRESS' %>

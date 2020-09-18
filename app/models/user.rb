@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL}
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL }
   validates :password, presence: true, length: { in: 6..16 }
   validates :username, presence: true, length: { in: 4..15 }, uniqueness: { case_sensitive: false }
   validates :full_name, presence: true

@@ -1,14 +1,7 @@
 <div>
   <img src="..." class="img-fluid" alt="User cover image">
 
-  <nav class="nav">
-    <a class="nav-link active" href="#">PROGRESS UPDATES</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">PHOTOS</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FOLLOWING</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FOLLOWERS</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">FAVOURITES</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">LISTS</a>
-  </nav>
+  <%= render 'shared/nav' %>
 
   <section class="user-updates">
     <h2>RECENT PROGRESS FROM <%= @user.full_name.upcase %></h2>

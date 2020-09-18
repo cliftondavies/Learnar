@@ -1,9 +1,5 @@
 <div>
-  <nav class="nav">
-    <a class="nav-link active" href="#">PROGRESS UPDATES</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">PHOTOS</a>
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">VIDEOS</a>
-  </nav>
+  <%= render 'shared/nav' %>
 
   <%= form_with model: @progress_update, local: true do |f| %>
     <% if @progress_update.errors.full_messages.any? %>

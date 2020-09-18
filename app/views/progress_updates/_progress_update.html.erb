@@ -1,0 +1,13 @@
+<ul class="list-unstyled">
+  <li class="media">
+    <%= user_photo(progress_update.author) %>
+
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">
+        <%= progress_update.author.full_name %>
+        <span> <%= time_ago_in_words(progress_update.created_at) %></span>
+      </h5>
+      <%= progress_update.text %>
+    </div>
+  </li>
+</ul>

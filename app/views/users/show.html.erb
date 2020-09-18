@@ -13,18 +13,7 @@
   <section class="user-updates">
     <h2>RECENT PROGRESS FROM <%= @user.full_name.upcase %></h2>
 
-    <ul class="list-unstyled">
-      <% @progress_updates.each do |progress| %>
-        <li class="media">
-          user_photo(progress.author)
-
-          <div class="media-body">
-            <h5 class="mt-0 mb-1"><%= progress.author.full_name %><span> <%= time_ago_in_words(progress.created_at) %></span></h5>
-            <%= progress.text %>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+    <%= render @user_progress_updates %>
   </section>
 </div>
 
@@ -33,7 +22,7 @@
     <div>
       <%= follow_or_unfollow_btn(@user) %>
 
-      user_photo(@user, class: "rounded-circle")
+      <%= user_photo(@user, class: "rounded-circle") %>
 
       <button>add fa icon for menu</button>
     </div>
@@ -42,28 +31,14 @@
 
     <ul class="list-group list-group-horizontal">
       <li class="list-group-item"><%= @update_count %> <span>Updates</span> </li>
-      <li class="list-group-item"><%= following_count %> <span>Following</span> </li>
-      <li class="list-group-item"><%= follower_count %> <span>Followers</span> </li>
+      <li class="list-group-item"><%= following_count(@user) %> <span>Following</span> </li>
+      <li class="list-group-item"><%= follower_count(@user) %> <span>Followers</span> </li>
     </ul>
   </section>
 
   <section class="followed-by">
     <h2>FOLLOWED BY</h2>
 
-    <ul class="list-unstyled">
-      <% current_user.users_to_follow.each do |user| %>
-        <li class="media">
-          user_photo(user, class: "rounded-circle")
-
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">
-              <%= user.full_name %>
-              <%= user_subtext(user) %>
-            </h5>
-            <%= follow_or_unfollow_btn(user) %>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+    <%= render @followers %>
   </section>
 <section>

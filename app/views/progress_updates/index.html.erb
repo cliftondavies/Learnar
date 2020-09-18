@@ -21,18 +21,7 @@
   <section class="community-updates">
     <h2>COMMUNITY PROGRESS UPDATES</h2>
 
-    <ul class="list-unstyled">
-      <% @progress_updates.each do |progress| %>
-        <li class="media">
-          user_photo(progress.author)
-
-          <div class="media-body">
-            <h5 class="mt-0 mb-1"><%= progress.author.full_name %><span> <%= time_ago_in_words(progress.created_at) %></span></h5>
-            <%= progress.text %>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+    <%= render @community_progress_updates %>
   </section>
 </div>
 
@@ -40,19 +29,6 @@
   <section class="who-to-follow">
     <h2>WHO TO FOLLOW</h2>
 
-    <ul class="list-unstyled">
-      <% current_user.users_to_follow.each do |user| %>
-        <li class="media">
-          user_photo(user, class: "rounded-circle")
-
-          <div class="media-body">
-            <h5 class="mt-0 mb-1">
-              <%= user.full_name %>
-              <%= user_subtext(user) %>
-            </h5>
-          </div>
-        </li>
-      <% end %>
-    </ul>
+    <%= render current_user.users_to_follow %>
   </section>
 </div>

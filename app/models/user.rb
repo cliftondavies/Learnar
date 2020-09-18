@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  before_save :format_input
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -33,5 +35,12 @@ class User < ApplicationRecord
 
   def followed?(user)
     followeds.exist?(user.id)
+  end
+
+  private
+
+  def format_input
+    self.email = email.downcase
+    self.full_name = full_nmae.downcase.titleize
   end
 end

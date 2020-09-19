@@ -1,5 +1,5 @@
 <div>
-  <img src="..." class="img-fluid" alt="User cover image">
+  <%= image_tag "learn.jpg", alt: "User cover image", class: "img-fluid" %>
 
   <%= render 'shared/nav' %>
 
@@ -17,7 +17,7 @@
 
       <%= user_photo(@user, class: "rounded-circle") %>
 
-      <button>add fa icon for menu</button>
+      <button><i class="fas fa-bars"></i></button>
     </div>
 
     <h2><%= @user.full_name.upcase %> <span><%= @user.username %></span></h2>

@@ -26,11 +26,11 @@ class User < ApplicationRecord
   scope :random, -> { take(3) }
 
   def users_to_follow
-    User.where.not(id: (followeds + [self])).order(created_at: :desc)
+    User.where.not(id: (followed_ids + [self])).order(created_at: :desc)
   end
 
   def shared_following(user)
-    user.followed.where(id: [followers]).take(1)
+    user.followeds.where(id: follower_ids).take
   end
 
   def followed?(user)
@@ -40,7 +40,7 @@ class User < ApplicationRecord
   private
 
   def format_input
+    self.full_name = full_name.downcase.titleize
     self.email = email.downcase
-    self.full_name = full_nmae.downcase.titleize
   end
 end

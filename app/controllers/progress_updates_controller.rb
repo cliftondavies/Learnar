@@ -2,7 +2,7 @@ class ProgressUpdatesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @community_progress_updates = ProgressUpdate.eager_load.most_recent
+    @community_progress_updates = ProgressUpdate.include_author.most_recent
     @progress_update = ProgressUpdate.new
   end
 

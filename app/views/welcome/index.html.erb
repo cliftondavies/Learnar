@@ -8,7 +8,11 @@
   <section class="join">
     <h3>Join the Learner community today</h3>
 
-    <button type="button" class="btn btn-primary btn-lg btn-block">Sign up</button>
-    <button type="button" class="btn btn-secondary btn-lg btn-block">Log in</button>
+    <!--<button type="button" class="btn btn-primary btn-lg btn-block">-->
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg btn-block" %>
+    <!--</button>-->
+    <!--<button type="button" class="btn btn-secondary btn-lg btn-block">-->
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-secondary btn-lg btn-block" %>
+    <!--</button>-->
   </section>
 </div>

@@ -4,7 +4,7 @@
 
     <div class="media-body">
       <h5 class="mt-0 mb-1">
-        <%= progress_update.author.full_name %>
+        <%= link_to progress_update.author.full_name, user_path(progress_update.author) %>
         <span> <%= time_ago_in_words(progress_update.created_at) %></span>
       </h5>
       <%= progress_update.text %>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_progress_updates = @user.progress_updates.eager_load.most_recent
+    @user_progress_updates = @user.progress_updates.include_author.most_recent
     @followers = @user.followers.random
     @update_count = @user.progress_updates.size
   end

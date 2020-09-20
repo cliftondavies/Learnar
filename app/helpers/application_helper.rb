@@ -24,17 +24,15 @@ module ApplicationHelper
   end
 
   def follow_or_unfollow_btn(user)
-    return if current_page?(progress_updates_path)
+    return if current_page?(progress_updates_path) || user == current_user
 
     following = Following.find_by(followed: user, follower: current_user)
     if following
       # button_to('Unfollow!', user_following_path(following, user), method: :delete)
-      button_to user_following_path(following, user), method: :delete do
-        icon('fas', 'minus-circle')
-      end
+      button_to(user_following_path(following, user), method: :delete) { icon('fas', 'minus-circle') }
     else
       # button_to('Follow!', user_followings_path(user))
-      button_to user_followings_path(user) { icon('fas', 'plus-circle') }
+      button_to(user_followings_path(user)) { icon('fas', 'plus-circle') }
     end
   end
 end

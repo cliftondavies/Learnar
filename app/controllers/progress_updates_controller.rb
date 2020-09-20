@@ -7,7 +7,7 @@ class ProgressUpdatesController < ApplicationController
   end
 
   def create
-    @progress_update = current_user.progress.build(progress_update_params)
+    @progress_update = current_user.progress_updates.build(progress_update_params)
 
     if @progress_update.save
       redirect_back fallback_location: progress_updates_path, notice: 'Progress update was successful.'

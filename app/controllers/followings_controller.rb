@@ -5,7 +5,7 @@ class FollowingsController < ApplicationController
     @following = current_user.outgoings.build(followed_id: params[:user_id])
     if @following.save
       redirect_back fallback_location: user_path(current_user),
-                    notice: "You are now following #{@following.followed.name}!"
+                    notice: "You are now following #{@following.followed.full_name}!"
     else
       flash.now[:alert] = 'Follow was unsuccessful. Please try again'
       render 'users/show'
@@ -16,7 +16,8 @@ class FollowingsController < ApplicationController
     @following = Following.find(params[:id])
     if @following
       @following.destroy
-      redirect_back fallback_location: user_path(current_user), notice: "You unfollowed #{@following.followed.name}!"
+      redirect_back fallback_location: user_path(current_user),
+                    notice: "You unfollowed #{@following.followed.full_name}!"
     else
       redirect_back fallback_location: user_path(current_user),
                     alert: 'You cannot unfollow someone you did not previously follow.'

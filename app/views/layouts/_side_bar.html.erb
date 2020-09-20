@@ -15,6 +15,6 @@
   <nav class="nav flex-column">
     <%= link_to(progress_updates_path, class: 'nav-link active') { icon('fas', 'home', 'HOME') } %>
     <%= link_to(user_path(current_user), class: 'nav-link') { icon('fas', 'user', 'PROFILE') } %>
-    <%= link_to(destroy_user_session_path, method: :delete) { icon('fas', 'sign-out-alt', 'SIGN OUT') } %>
+    <%= link_to(destroy_user_session_path, method: :delete, class: 'nav-link') { icon('fas', 'sign-out-alt', 'SIGN OUT') } %>
   </nav>
 </div>

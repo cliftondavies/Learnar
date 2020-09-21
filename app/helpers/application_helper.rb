@@ -35,4 +35,12 @@ module ApplicationHelper
       button_to(user_followings_path(user)) { icon('fas', 'plus-circle') }
     end
   end
+
+  def home_link
+    return if current_page?(root_path)
+
+    link_to(root_path, class: 'home-link position-absolute border border-white py-1 px-1 rounded') do
+      icon('fas', 'brain', class: 'text-dark fa-2x')
+    end
+  end
 end

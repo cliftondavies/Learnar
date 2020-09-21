@@ -23,6 +23,11 @@ $input-width: 60%;
   .welcome {
     background: $mvp-blue;
     font-size: 20px;
+
+    .home-link {
+      top: 5px;
+      left: 5px;
+    }
   }
 
   .nav-main-wrap,
@@ -73,6 +78,7 @@ $input-width: 60%;
   }
 }
 
-.home .join .btn:hover {
+.home .join .btn:hover,
+.welcome .home-link:hover {
   background: darken($mvp-blue, 10%);
 }

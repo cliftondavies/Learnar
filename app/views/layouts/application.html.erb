@@ -15,20 +15,24 @@
   </head>
 
   <body>
-    <div class="overall-wrap">
-      <%= render 'layouts/side_bar' if signed_in? %>
-      <%= render 'layouts/welcome' unless signed_in? %>
+    <div class="overall-wrap container-fluid px-0">
+      <div class="row vh-100 no-gutters align-items-stretch">
+        <%= render 'layouts/side_bar' if signed_in? %>
+        <%= render 'layouts/welcome' unless signed_in? %>
 
-      <div class="nav-main-wrap">
-        <%= render 'layouts/nav' if signed_in? %>
-        <%= render 'layouts/flash' %>
+        <div class="nav-main-wrap col">
+          <%= render 'layouts/nav' if signed_in? %>
+          <%= render 'layouts/flash' %>
 
-        <main class="main">
-          <%= yield %>
-        </main>
+          <main class="main">
+            <%= yield %>
+          </main>
+        </div>
+
+        <div class="w-100"></div>
+
+        <%= render 'layouts/footer' unless signed_in? %>
       </div>
-
-      <%= render 'layouts/footer' unless signed_in? %>
     </div>
   </body>
 </html>

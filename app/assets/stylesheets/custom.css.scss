@@ -1,1 +1,51 @@
+$mvp-blue: rgb(29, 161, 242);
+$mvp-black: #192734;
+$mvp-grey: #6B7D8C;
+
 @import "bootstrap";
+
+.overall-wrap {
+  .nav-main-wrap,
+  .welcome {
+    height: 90%;
+  }
+
+  .footer {
+    height: 10%;
+    color: $mvp-grey;
+
+    span {
+      line-height: 58px;
+    }
+  }
+
+  .welcome {
+    background: $mvp-blue;
+    font-size: 20px;
+  }
+
+  .nav-main-wrap,
+  .footer {
+    border: 0 solid #000;
+    background: $mvp-black;
+  }
+
+  .home {
+    height: calc(100vh - 10vh);
+
+    .btn:first-of-type {
+      background: $mvp-blue;
+      color: #fff;
+    }
+
+    .btn:last-child {
+      background: $mvp-black;
+      border-color: $mvp-blue;
+      color: $mvp-blue;
+    }
+  }
+}
+
+.home .join .btn:hover {
+  background: darken($mvp-blue, 10%);
+}

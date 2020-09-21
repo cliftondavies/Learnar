@@ -60,7 +60,7 @@ $input-width: 60%;
   }
 
   .sign-up {
-    min-height: calc(100vh - 10vh);
+    height: calc(100vh - 10vh);
 
     form {
       width: $input-width;
@@ -73,7 +73,7 @@ $input-width: 60%;
   }
 
   .flash {
-    top: 0;
+    // top: 0;
     right: 0;
   }
 }

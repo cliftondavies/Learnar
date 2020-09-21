@@ -44,6 +44,14 @@ $mvp-grey: #6B7D8C;
       color: $mvp-blue;
     }
   }
+
+  .log-in {
+    height: calc(100vh - 10vh);
+
+    form {
+      width: 60%;
+    }
+  }
 }
 
 .home .join .btn:hover {

@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def user_photo(user, options = { size: 64, class: 'mr-3' })
+  def user_photo(user, options = { size: 50, class: 'mr-2' })
     photo_id = Digest::MD5::hexdigest(user.email.downcase)
     photo_size = options[:size]
     image_class = options[:class]

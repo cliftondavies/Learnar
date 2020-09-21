@@ -31,7 +31,8 @@ $input-width: 60%;
   }
 
   .nav-main-wrap,
-  .footer {
+  .footer,
+  .side-bar {
     border: 0 solid #000;
     background: $mvp-black;
   }
@@ -76,9 +77,44 @@ $input-width: 60%;
     // top: 0;
     right: 0;
   }
+
+  .side-bar {
+    height: 100%;
+    // background: $mvp-black;
+    color: $mvp-grey;
+
+    span:nth-of-type(2) {
+      font-size: 14px;
+    }
+
+    .list-group {
+      line-height: 1;
+    }
+
+    .nav-link {
+      color: $mvp-grey;
+    }
+  }
 }
 
 .home .join .btn:hover,
 .welcome .home-link:hover {
   background: darken($mvp-blue, 10%);
+}
+
+.side-bar {
+  .nav-link {
+    &:first-child {
+      background: $mvp-blue;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    &:active {
+      background: $mvp-blue;
+      color: #fff;
+    }
+  }
 }

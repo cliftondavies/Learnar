@@ -1,20 +1,28 @@
-<div class="side-bar col-3">
-  <div class="media">
+<div class="side-bar col-2">
+  <div class="media py-2 pl-2 d-flex align-items-center">
     <%= user_photo(current_user) %>
 
-    <div class="media-body">
-      <h5 class="mt-0"><%= current_user.full_name.upcase %></h5>
+    <div class="media-body font-weight-bolder">
+      <span class="mt-0"><%= current_user.full_name.upcase %></span>
     </div>
   </div>
 
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item"><%= following_count(current_user) %> <span>Following</span> </li>
-    <li class="list-group-item"><%= follower_count(current_user) %> <span>Followers</span> </li>
+  <ul class="list-group list-group-horizontal text-center font-weight-bolder">
+    <li class="list-group-item bg-transparent py-3 w-50">
+      <span class="text-light d-block"><%= following_count(current_user) %></span>
+      <span>Following</span>
+    </li>
+    <li class="list-group-item bg-transparent py-3 w-50">
+      <span class="text-light d-block"><%= follower_count(current_user) %></span>
+      <span>Followers</span>
+    </li>
   </ul>
 
-  <nav class="nav flex-column">
-    <%= link_to(progress_updates_path, class: 'nav-link active') { icon('fas', 'home', 'HOME') } %>
-    <%= link_to(user_path(current_user), class: 'nav-link') { icon('fas', 'user', 'PROFILE') } %>
-    <%= link_to(destroy_user_session_path, method: :delete, class: 'nav-link') { icon('fas', 'sign-out-alt', 'SIGN OUT') } %>
+  <nav class="nav flex-column font-weight-bolder">
+    <%= link_to(progress_updates_path, class: 'nav-link text-white') { icon('fas', 'home', 'HOME', class: 'mr-1') } %>
+    <%= link_to(user_path(current_user), class: 'nav-link') { icon('fas', 'user', 'PROFILE', class: 'mr-1') } %>
+    <%= link_to(destroy_user_session_path, method: :delete, class: 'nav-link') do %>
+     <%= icon('fas', 'sign-out-alt', 'SIGN OUT', class: 'mr-1') %>
+    <% end %>
   </nav>
 </div>

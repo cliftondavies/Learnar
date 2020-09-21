@@ -1,6 +1,7 @@
 $mvp-blue: rgb(29, 161, 242);
 $mvp-black: #192734;
 $mvp-grey: #6B7D8C;
+$input-width: 60%;
 
 @import "bootstrap";
 
@@ -12,10 +13,10 @@ $mvp-grey: #6B7D8C;
 
   .footer {
     height: 10%;
-    color: $mvp-grey;
 
     span {
       line-height: 58px;
+      color: $mvp-grey;
     }
   }
 
@@ -49,8 +50,26 @@ $mvp-grey: #6B7D8C;
     height: calc(100vh - 10vh);
 
     form {
-      width: 60%;
+      width: $input-width;
     }
+  }
+
+  .sign-up {
+    min-height: calc(100vh - 10vh);
+
+    form {
+      width: $input-width;
+    }
+  }
+
+  .errors {
+    left: -340px;
+    top: 0;
+  }
+
+  .flash {
+    top: 0;
+    right: 0;
   }
 }
 

@@ -2,7 +2,7 @@
 <p class="alert"><%# alert %></p>-->
 
 <% if notice.present? %>
-  <div class="alert alert-info alert-dismissible fade show" role="alert">
+  <div class="flash alert alert-info alert-dismissible fade show position-absolute" role="alert">
     <%= notice %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
@@ -11,7 +11,7 @@
 <% end %>
 
 <% if alert.present? %>
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div class="flash alert alert-danger alert-dismissible fade show position-absolute" role="alert">
     <%= alert %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>

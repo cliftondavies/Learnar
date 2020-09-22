@@ -18,16 +18,14 @@
         <%= render 'layouts/side_bar' if signed_in? %>
         <%= render 'layouts/welcome' unless signed_in? %>
 
-        <div class="nav-main-wrap col">
+        <div class="nav-main-wrap col row no-gutters">
           <%= render 'layouts/nav' if signed_in? %>
           <%= render 'layouts/flash' %>
 
-          <main class="main">
+          <main class="main col-12 row no-gutters">
             <%= yield %>
           </main>
         </div>
-
-        <div class="w-100"></div>
 
         <%= render 'layouts/footer' unless signed_in? %>
       </div>

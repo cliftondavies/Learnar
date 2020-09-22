@@ -1,6 +1,7 @@
-$mvp-blue: rgb(29, 161, 242);
+$mvp-blue: #1da1f2; //(29, 161, 242);
 $mvp-black: #192734;
-$mvp-grey: #6B7D8C;
+$mvp-grey: #657786; //6B7D8C;
+$mvp-light: #e1e8ed;
 $input-width: 60%;
 
 @import "bootstrap";
@@ -109,6 +110,29 @@ $input-width: 60%;
   .main {
     height: 90%;
   }
+
+  .progress-index {
+    background: $mvp-light;
+
+    .nav-link {
+      border-bottom: 3px solid $mvp-blue;
+      color: $mvp-black;
+    }
+
+    label {
+      color: $mvp-grey;
+    }
+
+    .cu-h6 {
+      // font-size: 13px;
+      color: $mvp-blue;
+    }
+
+    .wtf-h6 {
+      color: $mvp-grey;
+      font-weight: 700;
+    }
+  }
 }
 
 .home .join .btn:hover,
@@ -130,5 +154,30 @@ $input-width: 60%;
       background: $mvp-blue;
       color: #fff;
     }
+  }
+}
+
+.community-updates {
+  h5 {
+    line-height: 0.4;
+  }
+
+  a {
+    font-size: 15px;
+    font-weight: 700;
+    color: $mvp-black;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+      color: $mvp-blue;
+    }
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 0.8;
+    color: $mvp-grey;
   }
 }

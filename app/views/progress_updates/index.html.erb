@@ -1,30 +1,33 @@
-<div class="col">
+<div class="progress-index col d-flex flex-column border-right">
   <%= render 'shared/nav' %>
 
-  <%= form_with model: @progress_update, local: true do |f| %>
-    <%= render 'shared/errors', obj: @progress_update %>
+  <div class="left px-4 py-4 flex-grow-1 d-flex flex-column">
+    <%= form_with model: @progress_update, local: true, class: 'bg-white mb-4 py-3 px-3 rounded shadow-sm' do |f| %>
+      <%= render 'shared/errors', obj: @progress_update %>
 
-    <div class="form-group">
-      <%= f.label :text, 'ADD PROGRESS' %>
-      <%= f.text_field :text, class:"form-control", placeholder: 'Write new progress update' %>
-    </div>
+      <div class="form-group">
+        <%= f.label :text, 'ADD PROGRESS' %>
+        <%= f.text_field :text, class:"form-control font-weight-bold", placeholder: 'Write new progress update' %>
+      </div>
 
-    <%= f.submit 'Share Progress', class: "btn btn-primary" %>
-  <% end %>
+      <%= f.submit 'Share Progress', class: "btn btn-primary font-weight-bold" %>
+    <% end %>
 
-  <section class="community-updates">
-    <h2>COMMUNITY PROGRESS UPDATES</h2>
+    <section class="community-updates pb-3 px-3 flex-grow-1 bg-white rounded shadow-sm">
+      <h6 class="cu-h6 border-bottom py-3 mb-3 font-weight-bold">COMMUNITY PROGRESS UPDATES</h6>
 
-    <%= render @community_progress_updates %>
-  </section>
+      <%= render @community_progress_updates %>
+    </section>
+  </div>
 </div>
 
-<div class="col-3">
-  <section class="who-to-follow">
-    <div>
-      <h2>WHO TO FOLLOW</h2>
 
-      <button><i class="fas fa-sync-alt"></i></button>
+<div class="col-3 progress-index border-left px-3">
+  <section class="who-to-follow">
+    <div class="d-flex justify-content-between mb-3 py-3 border-bottom">
+      <h6 class="wtf-h6 align-self-center">WHO TO FOLLOW</h6>
+
+      <button class="bg-transparent border-0"><i class="fas fa-sync-alt"></i></button>
     </div>
 
     <%= render current_user.users_to_follow %>

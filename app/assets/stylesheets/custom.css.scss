@@ -6,9 +6,8 @@ $input-width: 60%;
 @import "bootstrap";
 
 .overall-wrap {
-  .nav-main-wrap,
-  .welcome {
-    height: 90%;
+  .nav-main-wrap {
+    height: 100%;
   }
 
   .footer {
@@ -21,6 +20,7 @@ $input-width: 60%;
   }
 
   .welcome {
+    height: 90%;
     background: $mvp-blue;
     font-size: 20px;
 

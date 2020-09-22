@@ -122,16 +122,6 @@ $input-width: 60%;
     label {
       color: $mvp-grey;
     }
-
-    .cu-h6 {
-      // font-size: 13px;
-      color: $mvp-blue;
-    }
-
-    .wtf-h6 {
-      color: $mvp-grey;
-      font-weight: 700;
-    }
   }
 }
 
@@ -158,26 +148,61 @@ $input-width: 60%;
 }
 
 .community-updates {
+  h6 {
+    font-size: 13px;
+    color: $mvp-blue;
+  }
+
   h5 {
     line-height: 0.4;
   }
 
-  a {
-    font-size: 15px;
-    font-weight: 700;
-    color: $mvp-black;
-    padding: 0;
-    margin: 0;
+  small {
+    color: $mvp-grey;
+  }
+}
 
+.who-to-follow {
+  h6 {
+    color: $mvp-grey;
+    font-weight: 700;
+  }
+
+  div:first-child {
+    height: 60px;
+  }
+
+  button {
+    color: $mvp-grey;
+  }
+
+  .blue-link {
+    color: $mvp-blue;
+  }
+}
+
+.community-updates a,
+.who-to-follow a:first-child {
+  font-size: 15px;
+  font-weight: 700;
+  color: $mvp-black;
+  padding: 0;
+  margin: 0;
+}
+
+.community-updates,
+.who-to-follow {
+  a {
     &:hover {
       color: $mvp-blue;
     }
   }
+}
 
-  p {
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 0.8;
-    color: $mvp-grey;
-  }
+.community-updates p,
+.who-to-follow span {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 0.8;
+  color: $mvp-grey;
 }

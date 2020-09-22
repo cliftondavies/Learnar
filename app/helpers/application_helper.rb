@@ -17,9 +17,15 @@ module ApplicationHelper
 
   def user_subtext(user)
     if current_page?(progress_updates_path)
-      (shared_user = user.shared_following(current_user)) ? "Followed by #{shared_user.full_name}" : ''
+      # (shared_user = user.shared_following(current_user)) ? "Followed by #{shared_user.full_name}" : ''
+      if (shared_user = user.shared_following(current_user))
+        "Followed by #{link_to shared_user.full_name, user_path(user), class: 'blue-link'}"
+      else
+        ''
+      end
     else
-      "@#{user.username}"
+      # "@#{user.username}"
+      link_to "@#{user.username}", user_path(user)
     end
   end
 

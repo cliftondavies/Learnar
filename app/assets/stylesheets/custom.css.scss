@@ -81,11 +81,20 @@ $input-width: 60%;
   }
 
   .side-bar {
+    // position: sticky;
+    // top: 0;
     height: 100%;
     // background: $mvp-black;
     color: $mvp-grey;
 
+    // .s-side-bar {
+    //   position: sticky;
+    //   top: 0;
+    // }
+
     .media {
+      // position: sticky;
+      // top: 0;
       height: 10%;
     }
 
@@ -112,7 +121,20 @@ $input-width: 60%;
   }
 
   .progress-index {
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     background: $mvp-light;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      background: $mvp-light;
+    }
 
     .nav-link {
       border-bottom: 3px solid $mvp-blue;

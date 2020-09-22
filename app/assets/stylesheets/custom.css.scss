@@ -145,6 +145,35 @@ $input-width: 60%;
       color: $mvp-grey;
     }
   }
+
+  .user-show {
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background: $mvp-light;
+
+    .cover {
+      width: 100%;
+      height: 43%;
+      object-fit: cover;
+      object-position: 50% 54.5%;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      background: $mvp-light;
+    }
+
+    .nav-link {
+      border-bottom: 3px solid $mvp-blue;
+      color: $mvp-black;
+    }
+  }
+
+  .profile-details {
+    background: $mvp-light;
+  }
 }
 
 .home .join .btn:hover,
@@ -154,9 +183,9 @@ $input-width: 60%;
 
 .side-bar {
   .nav-link {
-    &:first-child {
-      background: $mvp-blue;
-    }
+    // &:first-child {
+    //   background: $mvp-blue;
+    // }
 
     &:hover {
       color: #fff;
@@ -169,7 +198,8 @@ $input-width: 60%;
   }
 }
 
-.community-updates {
+.community-updates,
+.user-updates {
   h6 {
     font-size: 13px;
     color: $mvp-blue;
@@ -204,7 +234,9 @@ $input-width: 60%;
 }
 
 .community-updates a,
-.who-to-follow a:first-child {
+.who-to-follow a:first-child,
+.user-updates a,
+.followed-by a:first-child {
   font-size: 15px;
   font-weight: 700;
   color: $mvp-black;
@@ -213,7 +245,9 @@ $input-width: 60%;
 }
 
 .community-updates,
-.who-to-follow {
+.who-to-follow,
+.user-updates,
+.followed-by {
   a {
     &:hover {
       color: $mvp-blue;
@@ -222,9 +256,39 @@ $input-width: 60%;
 }
 
 .community-updates p,
-.who-to-follow span {
+.who-to-follow span,
+.user-updates p,
+.followed-by span {
   font-size: 13px;
   font-weight: 700;
   line-height: 0.8;
   color: $mvp-grey;
+}
+
+.cover {
+  &:hover {
+    transform: scaleX(-1);
+  }
+}
+
+// .user-updates {
+//   h6 {
+//     font-size: 13px;
+//     color: $mvp-blue;
+//   }
+
+//   h5 {
+//     line-height: 0.4;
+//   }
+
+//   small {
+//     color: $mvp-grey;
+//   }
+// }
+
+.followed-by {
+  h6 {
+    color: $mvp-grey;
+    font-weight: 700;
+  }
 }

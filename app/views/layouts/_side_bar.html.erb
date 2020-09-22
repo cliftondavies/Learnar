@@ -19,7 +19,7 @@
   </ul>
 
   <nav class="nav flex-column font-weight-bolder">
-    <%= link_to(progress_updates_path, class: 'nav-link text-white') { icon('fas', 'home', 'HOME', class: 'mr-1') } %>
+    <%= link_to(progress_updates_path, class: 'nav-link') { icon('fas', 'home', 'HOME', class: 'mr-1') } %>
     <%= link_to(user_path(current_user), class: 'nav-link') { icon('fas', 'user', 'PROFILE', class: 'mr-1') } %>
     <%= link_to(destroy_user_session_path, method: :delete, class: 'nav-link') do %>
     <%= icon('fas', 'sign-out-alt', 'SIGN OUT', class: 'mr-1') %>

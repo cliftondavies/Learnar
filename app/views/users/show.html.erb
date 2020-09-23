@@ -32,7 +32,7 @@
     <ul class="list-group list-group-horizontal rounded-0">
       <li class="list-group-item bg-transparent py-3 rounded-0">
         <span class="d-block"><%= @update_count %></span>
-        <span>Updates</span>
+        <span><%= pluralize(@update_count, 'Update').remove(/\d+\s/) %></span>
       </li>
       <li class="list-group-item bg-transparent py-3">
         <span class="d-block"><%= following_count(@user) %></span>
@@ -40,7 +40,7 @@
       </li>
       <li class="list-group-item bg-transparent py-3 rounded-0">
         <span class="d-block"><%= follower_count(@user) %></span>
-        <span>Followers</span>
+        <span><%= pluralize(follower_count(@user), 'Follower').remove(/\d+\s/) %></span>
       </li>
     </ul>
   </section>

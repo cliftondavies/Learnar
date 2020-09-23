@@ -14,7 +14,7 @@
     </li>
     <li class="list-group-item bg-transparent py-3 w-50">
       <span class="d-block"><%= follower_count(current_user) %></span>
-      <span>Followers</span>
+      <span><%= pluralize(follower_count(current_user), 'Follower').remove(/\d+\s/) %></span>
     </li>
   </ul>
 

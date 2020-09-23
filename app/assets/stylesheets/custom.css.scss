@@ -103,7 +103,13 @@ $input-width: 60%;
     }
 
     .list-group {
+      height: 10%;
       line-height: 1;
+    }
+
+    .nav {
+      height: 80%;
+      background: lighten($mvp-black, 3%)
     }
 
     .nav-link {
@@ -151,6 +157,10 @@ $input-width: 60%;
     -ms-overflow-style: none;
     scrollbar-width: none;
     background: $mvp-light;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .cover {
       width: 100%;

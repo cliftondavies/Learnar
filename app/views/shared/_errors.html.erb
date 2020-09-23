@@ -3,11 +3,13 @@
     <h6 class="my-0"> The <%= obj.class.name.downcase %> was not saved due to the following
       <%= pluralize(obj.errors.count, "error") %>:
     </h6>
+
     <ul class="my-0">
       <% obj.errors.full_messages.each do |msg| %>
         <li><small><%= msg %></small></li>
       <% end %>
     </ul>
+
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

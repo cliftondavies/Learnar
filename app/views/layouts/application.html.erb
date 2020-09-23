@@ -16,10 +16,12 @@
     <div class="overall-wrap container-fluid px-0">
       <div class="row vh-100 no-gutters align-items-stretch">
         <%= render 'layouts/side_bar' if signed_in? %>
+
         <%= render 'layouts/welcome' unless signed_in? %>
 
         <div class="nav-main-wrap col row no-gutters">
           <%= render 'layouts/nav' if signed_in? %>
+
           <%= render 'layouts/flash' %>
 
           <main class="main col-12 row no-gutters">

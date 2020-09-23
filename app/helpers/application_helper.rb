@@ -17,15 +17,13 @@ module ApplicationHelper
 
   def user_subtext(user)
     if current_page?(progress_updates_path)
-      # (shared_user = user.shared_following(current_user)) ? "Followed by #{shared_user.full_name}" : ''
       if (shared_user = user.shared_following(current_user))
-        "Followed by #{link_to shared_user.full_name, user_path(user), class: 'blue-link'}"
+        "Followed by #{link_to shared_user.full_name, user_path(shared_user), class: 'blue-link'}".html_safe
       else
         ''
       end
     else
-      # "@#{user.username}"
-      link_to "@#{user.username}", user_path(user)
+      link_to "@#{user.username}", user_path(user), class: 'text-decoration-none'
     end
   end
 
@@ -34,11 +32,14 @@ module ApplicationHelper
 
     following = Following.find_by(followed: user, follower: current_user)
     if following
-      # button_to('Unfollow!', user_following_path(following, user), method: :delete)
-      button_to(user_following_path(following, user), method: :delete) { icon('fas', 'minus-circle') }
+      button_to(user_following_path(user, following), method: :delete,
+                                                      class: 'rounded-circle px-2 py-1 mr-2') do
+        icon('fas', 'minus-circle')
+      end
     else
-      # button_to('Follow!', user_followings_path(user))
-      button_to(user_followings_path(user)) { icon('fas', 'plus-circle') }
+      button_to(user_followings_path(user), class: 'rounded-circle px-2 py-1 mr-2') do
+        icon('fas', 'plus-circle')
+      end
     end
   end
 

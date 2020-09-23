@@ -15,28 +15,40 @@
 </div>
 
 <section class="profile-details col-3 border-left">
-  <section class="overview">
-    <div>
+  <section class="overview text-center">
+    <div class="d-flex justify-content-center align-items-center mb-3 pt-4">
       <%= follow_or_unfollow_btn(@user) %>
 
       <%= user_photo(@user, size: 60, class: "rounded-circle") %>
 
-      <button><i class="fas fa-bars"></i></button>
+      <button class="rounded-circle px-2 py-1 ml-2"><i class="fas fa-bars"></i></button>
     </div>
 
-    <h2><%= @user.full_name.upcase %> <span><%= "@#{@user.username}" %></span></h2>
+    <div class="mb-3">
+      <span class="d-block my-0 py-0"><%= @user.full_name.upcase %></span>
+      <span class="my-0"><%= "@#{@user.username}" %></span>
+    </div>
 
-    <ul class="list-group list-group-horizontal">
-      <li class="list-group-item"><%= @update_count %> <span>Updates</span> </li>
-      <li class="list-group-item"><%= following_count(@user) %> <span>Following</span> </li>
-      <li class="list-group-item"><%= follower_count(@user) %> <span>Followers</span> </li>
+    <ul class="list-group list-group-horizontal rounded-0">
+      <li class="list-group-item bg-transparent py-3 rounded-0">
+        <span class="d-block"><%= @update_count %></span>
+        <span>Updates</span>
+      </li>
+      <li class="list-group-item bg-transparent py-3">
+        <span class="d-block"><%= following_count(@user) %></span>
+        <span>Following</span>
+      </li>
+      <li class="list-group-item bg-transparent py-3 rounded-0">
+        <span class="d-block"><%= follower_count(@user) %></span>
+        <span>Followers</span>
+      </li>
     </ul>
   </section>
 
   <section class="followed-by px-3">
-    <h6 class="py-3 border-bottom">FOLLOWED BY</h6>
+    <h6 class="py-3 mb-0 border-bottom">FOLLOWED BY</h6>
 
-    <ul class="list-unstyled pt-3 border-top">
+    <ul class="list-unstyled pt-3 mt-0 border-top">
       <%= render @followers %>
     </ul>
   </section>

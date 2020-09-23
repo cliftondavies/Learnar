@@ -1,6 +1,6 @@
-$mvp-blue: #1da1f2; //(29, 161, 242);
+$mvp-blue: #1da1f2;
 $mvp-black: #192734;
-$mvp-grey: #657786; //6B7D8C;
+$mvp-grey: #657786;
 $mvp-light: #e1e8ed;
 $input-width: 60%;
 
@@ -75,30 +75,23 @@ $input-width: 60%;
   }
 
   .flash {
-    // top: 0;
     right: 0;
     z-index: 100;
   }
 
   .side-bar {
-    // position: sticky;
-    // top: 0;
     height: 100%;
-    // background: $mvp-black;
     color: $mvp-grey;
 
-    // .s-side-bar {
-    //   position: sticky;
-    //   top: 0;
-    // }
-
     .media {
-      // position: sticky;
-      // top: 0;
       height: 10%;
     }
 
-    span:nth-of-type(2) {
+    span:first-child {
+      color: darken($mvp-light, 10%);
+    }
+
+    span:last-child {
       font-size: 14px;
     }
 
@@ -183,6 +176,35 @@ $input-width: 60%;
 
   .profile-details {
     background: $mvp-light;
+
+    .button_to {
+      height: 36px;
+    }
+
+    button {
+      border: 2px solid darken($mvp-light, 13%);
+      background: transparent;
+      // z-index: 100;
+    }
+
+    button,
+    .fas {
+      color: darken($mvp-light, 13%);
+    }
+
+    .list-group {
+      line-height: 1;
+    }
+
+    .list-group-item {
+      width: calc(100% / 3);
+    }
+  }
+
+  .overview {
+    div:nth-of-type(2) {
+      line-height: 1;
+    }
   }
 }
 
@@ -193,10 +215,6 @@ $input-width: 60%;
 
 .side-bar {
   .nav-link {
-    // &:first-child {
-    //   background: $mvp-blue;
-    // }
-
     &:hover {
       color: #fff;
     }
@@ -230,6 +248,10 @@ $input-width: 60%;
     font-weight: 700;
   }
 
+  h5 {
+    line-height: 0.8;
+  }
+
   div:first-child {
     height: 60px;
   }
@@ -244,9 +266,11 @@ $input-width: 60%;
 }
 
 .community-updates a,
-.who-to-follow a:first-child,
+.who-to-follow h5 > a,
 .user-updates a,
-.followed-by a:first-child {
+.followed-by h5 > a,
+.overview div span:first-child,
+.overview .list-group span:first-child {
   font-size: 15px;
   font-weight: 700;
   color: $mvp-black;
@@ -268,7 +292,9 @@ $input-width: 60%;
 .community-updates p,
 .who-to-follow span,
 .user-updates p,
-.followed-by span {
+.followed-by span > a,
+.overview div span:last-child,
+.overview .list-group span:last-child {
   font-size: 13px;
   font-weight: 700;
   line-height: 0.8;
@@ -281,24 +307,27 @@ $input-width: 60%;
   }
 }
 
-// .user-updates {
-//   h6 {
-//     font-size: 13px;
-//     color: $mvp-blue;
-//   }
-
-//   h5 {
-//     line-height: 0.4;
-//   }
-
-//   small {
-//     color: $mvp-grey;
-//   }
-// }
-
 .followed-by {
   h6 {
     color: $mvp-grey;
     font-weight: 700;
+  }
+
+  h5 {
+    line-height: 0.8;
+  }
+}
+
+.button_to {
+  button {
+    &:hover {
+      background: $mvp-blue;
+    }
+  }
+
+  .fas {
+    &:hover {
+      color: #fff;
+    }
   }
 }

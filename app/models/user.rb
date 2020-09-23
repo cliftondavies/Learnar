@@ -24,7 +24,7 @@ class User < ApplicationRecord
   scope :random, -> { take(3) }
 
   def users_to_follow
-    User.where.not(id: (followed_ids + [self])).order(created_at: :desc)
+    User.where.not(id: (followed_ids + [self])).order(created_at: :desc).random
   end
 
   def shared_following(user)

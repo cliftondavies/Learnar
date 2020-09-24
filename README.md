@@ -12,9 +12,9 @@ A dedicated community for learners, with varying interests, to share their progr
 
 ## :tv: Media
 
-[Live Demo Link]()
+[Live Demo Link](https://learnar.herokuapp.com/)
 
-[Video Presentation]()
+[Video Presentation](https://www.loom.com/share/ad3be7dccdae40199c6539128746590a)
 
 ## MVP Features
 

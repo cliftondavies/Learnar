@@ -27,7 +27,7 @@ module ApplicationHelper
     end
   end
 
-  def follow_or_unfollow_btn(user)
+  def follow_unfollow(user)
     return if current_page?(progress_updates_path) || user == current_user
 
     following = Following.find_by(followed: user, follower: current_user)

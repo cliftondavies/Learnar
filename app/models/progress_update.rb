@@ -1,6 +1,4 @@
 class ProgressUpdate < ApplicationRecord
-  before_save { self.text = text.capitalize }
-
   validates :author, presence: true
   validates :text, presence: true, length: { maximum: 255,
                                              too_long: '255 characters in post is the maximum allowed.' }

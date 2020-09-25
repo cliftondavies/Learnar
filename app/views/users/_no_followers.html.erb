@@ -1,0 +1,7 @@
+<% if @followers.empty? %>
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header h-100">
+      <%= @user == current_user ? 'You' : '@user.full_name' %> didn't follow anyone? Whaaat!
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,294 @@
+@import "custom_module/reset";
+@import "custom_module/variables";
+@import "custom_module/mixins";
+@import "bootstrap";
+
+.overall-wrap {
+  .nav-main-wrap {
+    height: 100%;
+  }
+
+  .footer {
+    height: 10%;
+
+    span {
+      line-height: 62px;
+      color: $mvp-grey;
+    }
+  }
+
+  .welcome {
+    height: 90%;
+    background: $mvp-blue;
+    font-size: 20px;
+
+    .home-link {
+      top: 5px;
+      left: 5px;
+    }
+  }
+
+  .nav-main-wrap,
+  .footer,
+  .side-bar {
+    border: 0 solid #000;
+    background: $mvp-black;
+  }
+
+  .home {
+    height: calc(100vh - 10vh);
+
+    .btn:first-of-type {
+      background: $mvp-blue;
+      color: #fff;
+    }
+
+    .btn:last-child {
+      background: $mvp-black;
+      border-color: $mvp-blue;
+      color: $mvp-blue;
+    }
+  }
+
+  .log-in {
+    height: calc(100vh - 10vh);
+
+    form {
+      width: $input-width;
+    }
+  }
+
+  .sign-up {
+    height: calc(100vh - 10vh);
+
+    form {
+      width: $input-width;
+    }
+  }
+
+  .errors {
+    left: -340px;
+    top: 0;
+  }
+
+  .flash {
+    right: 10px;
+    bottom: 70px;
+    z-index: 100;
+  }
+
+  .side-bar {
+    height: 100%;
+    color: $mvp-grey;
+
+    .media {
+      height: 10%;
+    }
+
+    span:first-child {
+      color: darken($mvp-light, 10%);
+    }
+
+    span:last-child {
+      font-size: 14px;
+    }
+
+    .list-group {
+      height: 10%;
+      line-height: 1;
+    }
+
+    .nav {
+      height: 80%;
+      background: lighten($mvp-black, 3%);
+    }
+
+    .nav-link {
+      color: $mvp-grey;
+    }
+  }
+
+  .navbar {
+    height: 10%;
+    background-color: $mvp-blue;
+  }
+
+  .main {
+    height: 90%;
+  }
+
+  .progress-index {
+    @include main;
+
+    label {
+      color: $mvp-grey;
+    }
+  }
+
+  .user-show {
+    @include main;
+
+    .cover {
+      width: 100%;
+      height: 43%;
+      object-fit: cover;
+      object-position: 50% 54.5%;
+    }
+  }
+
+  .profile-details {
+    background: $mvp-light;
+
+    .button_to {
+      height: 36px;
+    }
+
+    button {
+      border: 2px solid darken($mvp-light, 13%);
+      background: transparent;
+    }
+
+    button,
+    .fas {
+      color: darken($mvp-light, 13%);
+    }
+
+    .list-group {
+      line-height: 1;
+    }
+
+    .list-group-item {
+      width: calc(100% / 3);
+    }
+  }
+
+  .overview {
+    div:nth-of-type(2) {
+      line-height: 1;
+    }
+  }
+}
+
+.home .join .btn:hover,
+.welcome .home-link:hover {
+  background: darken($mvp-blue, 10%);
+}
+
+.side-bar {
+  .nav-link {
+    &:hover {
+      color: #fff;
+    }
+
+    &:active {
+      background: $mvp-blue;
+      color: #fff;
+    }
+  }
+}
+
+.community-updates,
+.user-updates {
+  h6 {
+    font-size: 13px;
+    color: $mvp-blue;
+  }
+
+  h5 {
+    line-height: 0.4;
+  }
+
+  small {
+    color: $mvp-grey;
+  }
+}
+
+.who-to-follow {
+  h6 {
+    color: $mvp-grey;
+    font-weight: 700;
+  }
+
+  h5 {
+    line-height: 0.8;
+  }
+
+  div:first-child {
+    height: 60px;
+  }
+
+  button {
+    color: $mvp-grey;
+  }
+
+  .blue-link {
+    color: $mvp-blue;
+  }
+}
+
+.community-updates a,
+.who-to-follow h5 > a,
+.user-updates a,
+.followed-by h5 > a,
+.overview div span:first-child,
+.overview .list-group span:first-child {
+  font-size: 15px;
+  font-weight: 700;
+  color: $mvp-black;
+  padding: 0;
+  margin: 0;
+}
+
+.community-updates,
+.who-to-follow,
+.user-updates,
+.followed-by {
+  a {
+    &:hover {
+      color: $mvp-blue;
+    }
+  }
+}
+
+.community-updates p,
+.who-to-follow span,
+.user-updates p,
+.followed-by span > a,
+.overview div span:last-child,
+.overview .list-group span:last-child {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 0.8;
+  color: $mvp-grey;
+}
+
+.cover {
+  &:hover {
+    transform: scaleX(-1);
+  }
+}
+
+.followed-by {
+  h6 {
+    color: $mvp-grey;
+    font-weight: 700;
+  }
+
+  h5 {
+    line-height: 0.8;
+  }
+}
+
+.button_to {
+  button {
+    &:hover {
+      background: $mvp-blue;
+    }
+  }
+
+  .fas {
+    &:hover {
+      color: #fff;
+    }
+  }
+}

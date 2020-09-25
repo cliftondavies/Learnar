@@ -1,0 +1,57 @@
+<div class="user-show col d-flex flex-column border-right overflow-auto">
+  <%= image_tag "learn.jpg", alt: "User cover image", size: "960x300", class: "cover img-fluid" %>
+
+  <%= render 'shared/nav' %>
+
+  <div class="left px-4 py-4 flex-grow-1 d-flex flex-column">
+    <section class="user-updates pb-3 px-3 flex-grow-1 bg-white rounded shadow-sm">
+      <h6 class="border-bottom py-3 mb-3 font-weight-bold">RECENT PROGRESS FROM <%= @user.full_name.upcase %></h6>
+
+      <ul class="list-unstyled">
+        <%= render @user_progress_updates %>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<section class="profile-details col-3 border-left">
+  <section class="overview text-center">
+    <div class="d-flex justify-content-center align-items-center mb-3 pt-4">
+      <%= follow_unfollow(@user) %>
+
+      <%= user_photo(@user, size: 60, class: "rounded-circle") %>
+
+      <button class="rounded-circle px-2 py-1 ml-2"><i class="fas fa-bars"></i></button>
+    </div>
+
+    <div class="mb-3">
+      <span class="d-block my-0 py-0"><%= @user.full_name.upcase %></span>
+      <span class="my-0"><%= "@#{@user.username}" %></span>
+    </div>
+
+    <ul class="list-group list-group-horizontal rounded-0">
+      <li class="list-group-item bg-transparent py-3 rounded-0">
+        <span class="d-block"><%= @update_count %></span>
+        <span><%= pluralize(@update_count, 'Update').remove(/\d+\s/) %></span>
+      </li>
+      <li class="list-group-item bg-transparent py-3">
+        <span class="d-block"><%= following_count(@user) %></span>
+        <span>Following</span>
+      </li>
+      <li class="list-group-item bg-transparent py-3 rounded-0">
+        <span class="d-block"><%= follower_count(@user) %></span>
+        <span><%= pluralize(follower_count(@user), 'Follower').remove(/\d+\s/) %></span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="followed-by px-3">
+    <h6 class="py-3 mb-0 border-bottom">FOLLOWED BY</h6>
+
+    <%= render 'no_followers' %>
+
+    <ul class="list-unstyled pt-3 mt-0 border-top">
+      <%= render @followers %>
+    </ul>
+  </section>
+<section>

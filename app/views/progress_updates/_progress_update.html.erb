@@ -1,0 +1,15 @@
+<li class="media mb-3">
+  <%= user_photo(progress_update.author) %>
+
+  <div class="media-body py-0">
+    <div class="d-flex justify-content-between align-items-start">
+      <h5 class="my-0 py-0">
+        <%= link_to progress_update.author.full_name, user_path(progress_update.author), class: 'text-decoration-none' %>
+      </h5>
+
+      <small> <%= time_ago_in_words(progress_update.created_at) %></small>
+    </div>
+
+    <p class="my-0 py-0"><%= progress_update.text %></p>
+  </div>
+</li>

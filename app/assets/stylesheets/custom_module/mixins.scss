@@ -1,0 +1,21 @@
+@mixin main {
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: $mvp-light;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    background: $mvp-light;
+  }
+
+  .nav-link {
+    border-bottom: 3px solid $mvp-blue;
+    color: $mvp-black;
+  }
+}

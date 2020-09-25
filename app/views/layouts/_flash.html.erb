@@ -1,0 +1,17 @@
+<% if notice.present? %>
+  <div class="flash alert alert-info alert-dismissible fade show position-absolute mb-0 py-1" role="alert">
+    <%= notice %>
+    <button type="button" class="close py-1" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<% if alert.present? %>
+  <div class="flash alert alert-danger alert-dismissible fade show position-absolute mb-0 py-1" role="alert">
+    <%= alert %>
+    <button type="button" class="close py-1" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>

@@ -5,11 +5,32 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="overall-wrap container-fluid px-0">
+      <div class="row vh-100 no-gutters align-items-stretch">
+        <%= render 'layouts/side_bar' if signed_in? %>
+
+        <%= render 'layouts/welcome' unless signed_in? %>
+
+        <div class="nav-main-wrap col row no-gutters">
+          <%= render 'layouts/nav' if signed_in? %>
+
+          <%= render 'layouts/flash' %>
+
+          <main class="main col-12 row no-gutters">
+            <%= yield %>
+          </main>
+        </div>
+
+        <%= render 'layouts/footer' unless signed_in? %>
+      </div>
+    </div>
   </body>
 </html>

@@ -4,6 +4,7 @@ class ProgressUpdatesController < ApplicationController
   def index
     @community_progress_updates = ProgressUpdate.include_author.most_recent
     @progress_update = ProgressUpdate.new
+    @users_to_follow = User.users_to_follow(current_user)
   end
 
   def create

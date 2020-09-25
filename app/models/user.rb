@@ -21,18 +21,7 @@ class User < ApplicationRecord
   has_many :progress_updates, foreign_key: :author_id, inverse_of: :author, dependent: :destroy
 
   scope :random, -> { take(3) }
-
-  def users_to_follow
-    User.where.not(id: (followed_ids + [self])).order(created_at: :desc).random
-  end
-
-  def shared_following(user)
-    user.followeds.where(id: follower_ids).take
-  end
-
-  def followed?(user)
-    followeds.exist?(user.id)
-  end
+  scope :users_to_follow, ->(user) { where.not(id: (user.followed_ids + [user])).order(created_at: :desc).random }
 
   private
 

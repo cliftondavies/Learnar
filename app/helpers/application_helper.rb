@@ -15,9 +15,13 @@ module ApplicationHelper
     user.followeds.size
   end
 
+  def shared_following(user_one, user_two)
+    user_one.followeds.where(id: user_two.follower_ids).take
+  end
+
   def user_subtext(user)
     if current_page?(progress_updates_path)
-      if (shared_user = user.shared_following(current_user))
+      if (shared_user = shared_following(current_user, user))
         "Followed by #{link_to shared_user.full_name, user_path(shared_user), class: 'blue-link'}".html_safe
       else
         ''

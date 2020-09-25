@@ -10,8 +10,6 @@ RSpec.describe ProgressUpdate, type: :model do
   end
 
   describe 'Associations' do
-    it { is_expected.to have_many(:likes).inverse_of(:progress_update).dependent(:destroy) }
-
     it { is_expected.to belong_to(:author).class_name('User') }
   end
 end

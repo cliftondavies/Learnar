@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_002248) do
+ActiveRecord::Schema.define(version: 2020_09_25_104729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,16 +22,6 @@ ActiveRecord::Schema.define(version: 2020_09_16_002248) do
     t.datetime "updated_at", null: false
     t.index ["followed_id"], name: "index_followings_on_followed_id"
     t.index ["follower_id"], name: "index_followings_on_follower_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "progress_update_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["progress_update_id"], name: "index_likes_on_progress_update_id"
-    t.index ["user_id", "progress_update_id"], name: "index_likes_on_user_id_and_progress_update_id", unique: true
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "progress_updates", force: :cascade do |t|
@@ -61,7 +51,5 @@ ActiveRecord::Schema.define(version: 2020_09_16_002248) do
 
   add_foreign_key "followings", "users", column: "followed_id"
   add_foreign_key "followings", "users", column: "follower_id"
-  add_foreign_key "likes", "progress_updates"
-  add_foreign_key "likes", "users"
   add_foreign_key "progress_updates", "users", column: "author_id"
 end

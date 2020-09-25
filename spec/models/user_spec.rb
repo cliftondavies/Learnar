@@ -22,7 +22,6 @@ RSpec.describe User, type: :model do
 
   describe 'Associations' do
     it { is_expected.to have_many(:progress_updates).with_foreign_key(:author_id).inverse_of(:author).dependent(:destroy) }
-    it { is_expected.to have_many(:likes).inverse_of(:user).dependent(:destroy) }
 
     it { is_expected.to have_many(:followers).through(:incomings) }
     it { is_expected.to have_many(:followeds).through(:outgoings) }

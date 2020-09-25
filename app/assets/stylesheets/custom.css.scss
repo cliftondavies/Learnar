@@ -1,31 +1,6 @@
-$mvp-blue: #1da1f2;
-$mvp-black: #192734;
-$mvp-grey: #657786;
-$mvp-light: #e1e8ed;
-$input-width: 60%;
-
-@mixin main {
-  height: 100%;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  background: $mvp-light;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav {
-    position: sticky;
-    top: 0;
-    background: $mvp-light;
-  }
-
-  .nav-link {
-    border-bottom: 3px solid $mvp-blue;
-    color: $mvp-black;
-  }
-}
-
+@import "custom_module/reset";
+@import "custom_module/variables";
+@import "custom_module/mixins";
 @import "bootstrap";
 
 .overall-wrap {

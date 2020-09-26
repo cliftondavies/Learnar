@@ -14,8 +14,6 @@ A dedicated community for learners, with varying interests, to share their progr
 
 [Live Demo Link](https://learnar.herokuapp.com/)
 
-[Video Presentation](https://www.loom.com/share/ad3be7dccdae40199c6539128746590a)
-
 ## MVP Features
 
 This MVP allows you to:

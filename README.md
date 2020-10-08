@@ -16,17 +16,7 @@ A dedicated community for learners, with varying interests, to share their progr
 
 ## MVP Features
 
-This MVP allows you to:
-
-- Create a learner account
-- Sign in to your account
-- Sign out of your account
-- Share progress updates
-- Follow another learner
-- Unfollow another learner
-- View your profile
-- View the profile of another learner
-- View all progress updates posted
+[See wiki](https://github.com/cliftondavies/Learner/wiki)
 
 ## :toolbox: Tools & Technologies Used
 
@@ -138,17 +128,7 @@ heroku open
 
 ## Further Work
 
-Some further features to be implemented in later versions, include:
-
-- Likes
-- Comments
-- Mentions
-- Subject categories
-- Hashtags
-- Deleting of Progress Updates
-- Reload of 'Who to Follow' and 'Followers' section
-- Trending hashtags and subject categories section
-- Display of all followers and followees for a user
+[See open issues](https://github.com/cliftondavies/Learner/issues)
 
 ## Author
 

@@ -28,11 +28,8 @@ A dedicated community for learners, with varying interests, to share their progr
 - Bootstrap v4.5
 - Ruby v2.6.5
 - Ruby on Rails v5.2.4
-
-### Tested with
-
-- RSpec Rails v4.0.1
-- Shoulda Matchers v4.3
+- RSpec
+- PostgreSQL >=9.5
 
 ## :rocket: Getting Started
 

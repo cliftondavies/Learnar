@@ -4,6 +4,16 @@
 @import "bootstrap";
 
 .overall-wrap {
+  > div {
+    min-height: 100vh;
+  }
+
+  @media screen and (min-width: 768px) {
+    > div {
+      height: 100vh;
+    }
+  }
+
   .nav-main-wrap {
     height: 100%;
   }
@@ -12,7 +22,6 @@
     height: 10%;
 
     span {
-      line-height: 62px;
       color: $mvp-grey;
     }
   }
@@ -20,7 +29,7 @@
   .welcome {
     height: 90%;
     background: $mvp-blue;
-    font-size: 20px;
+    font-size: 16px;
 
     .home-link {
       top: 5px;
@@ -29,14 +38,18 @@
   }
 
   .nav-main-wrap,
-  .footer,
-  .side-bar {
+  .footer {
     border: 0 solid #000;
     background: $mvp-black;
   }
 
   .home {
     height: calc(100vh - 10vh);
+
+    h3 {
+      padding: 0 5px;
+      font-size: 18px;
+    }
 
     .btn:first-of-type {
       background: $mvp-blue;
@@ -77,12 +90,22 @@
     z-index: 100;
   }
 
-  .side-bar {
-    height: 100%;
+  .navbar {
+    position: absolute;
+    height: 10%;
     color: $mvp-grey;
+    z-index: 100;
+
+    #sideBar {
+      position: absolute;
+      top: 10vh;
+      height: calc(100vh - 10%);
+    }
 
     .media {
       height: 10%;
+      line-height: 1;
+      background: $mvp-black;
     }
 
     span:first-child {
@@ -90,16 +113,17 @@
     }
 
     span:last-child {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .list-group {
       height: 10%;
-      line-height: 1;
+      background: $mvp-black;
     }
 
     .nav {
       height: 80%;
+      font-size: 15px;
       background: lighten($mvp-black, 3%);
     }
 
@@ -108,9 +132,49 @@
     }
   }
 
-  .navbar {
+  .top-nav {
+    padding-left: 17.5%;
     height: 10%;
     background-color: $mvp-blue;
+
+    .fas {
+      color: $mvp-black;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .welcome {
+      font-size: 20px;
+    }
+
+    .home {
+      h3 {
+        font-size: 25px;
+      }
+    }
+
+    .navbar {
+      position: relative;
+      height: 100%;
+
+      #sideBar {
+        position: relative;
+        top: 0;
+        height: 100%;
+      }
+
+      span:last-child {
+        font-size: 14px;
+      }
+
+      .nav {
+        font-size: 16px;
+      }
+    }
+
+    .top-nav {
+      padding-left: 20px;
+    }
   }
 
   .main {
@@ -206,6 +270,7 @@
 .who-to-follow {
   h6 {
     color: $mvp-grey;
+    font-size: 13px;
     font-weight: 700;
   }
 
@@ -219,10 +284,20 @@
 
   button {
     color: $mvp-grey;
+    font-size: 13px;
   }
 
   .blue-link {
     color: $mvp-blue;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .who-to-follow {
+    h6,
+    button {
+      font-size: 16px;
+    }
   }
 }
 

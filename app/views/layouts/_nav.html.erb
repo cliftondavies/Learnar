@@ -1,16 +1,10 @@
-<nav class="col-12 navbar navbar-expand-lg pr-3 pl-4 navbar-light shadow-lg">
-  <%= link_to(progress_updates_path, class: 'navbar-brand') { icon('fas', 'brain', class: 'text-white') } %>
+<nav class="top-nav col-12 d-flex align-items-center justify-content-between pr-3">
+  <%= link_to(progress_updates_path) { icon('fas', 'brain', class: 'text-white') } %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link ml-4" href="#"><i class="fas fa-pen-alt"></i></a>
-      <a class="nav-item nav-link ml-4" href="#"><i class="fas fa-envelope"></i></a>
-      <a class="nav-item nav-link ml-4" href="#"><i class="fas fa-search"></i></a>
-      <a class="nav-item nav-link ml-4" href="#"><i class="fas fa-cog"></i></a>
-    </div>
+  <div class="socials d-flex justify-content-end">
+    <a class="ml-4" href="#"><i class="fas fa-pen-alt"></i></a>
+    <a class="ml-4" href="#"><i class="fas fa-envelope"></i></a>
+    <a class="ml-4" href="#"><i class="fas fa-search"></i></a>
+    <a class="ml-4" href="#"><i class="fas fa-cog"></i></a>
   </div>
 </nav>

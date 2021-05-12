@@ -8,7 +8,7 @@
 > Welcome to Learner!
 A dedicated community for learners, with varying interests, to share their progress, connect with other learners and find inspiration on their journey to mastery!
 
-![screenshot](learner.png)
+![screenshot](learnar.gif)
 
 ## :tv: Media
 
@@ -139,15 +139,6 @@ heroku open
 
 Contributions, issues and feature requests are welcome!
 
-1. Fork it
-2. Create feature branch
-`git checkout -b feature/fooBar`
-3. Commit changes
-`git commit -am 'Add some fooBar'`
-4. Push to the branch
-`git push origin feature/fooBar`
-5. Create new Pull Request
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
@@ -155,7 +146,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Font Awesome Sass](https://github.com/FortAwesome/font-awesome-sass)
-- [Rails Guides](https://guides.rubyonrails.org/)
 - [Gregoire Vella](https://www.behance.net/gregoirevella)
 - [Tim Mossholder](https://unsplash.com/photos/WE_Kv_ZB1l0)
 

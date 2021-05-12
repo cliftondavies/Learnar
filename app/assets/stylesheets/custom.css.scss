@@ -4,22 +4,8 @@
 @import "bootstrap";
 
 .overall-wrap {
-  > div {
-    min-height: 100vh;
-  }
-
-  @media screen and (min-width: 768px) {
-    > div {
-      height: 100vh;
-    }
-  }
-
-  .nav-main-wrap {
-    height: 100%;
-  }
-
   .footer {
-    height: 10%;
+    height: 10vh;
 
     span {
       color: $mvp-grey;
@@ -27,7 +13,6 @@
   }
 
   .welcome {
-    height: 90%;
     background: $mvp-blue;
     font-size: 16px;
 
@@ -44,7 +29,7 @@
   }
 
   .home {
-    height: calc(100vh - 10vh);
+    padding-bottom: 80px;
 
     h3 {
       padding: 0 5px;
@@ -64,7 +49,11 @@
   }
 
   .log-in {
-    height: calc(100vh - 10vh);
+    padding-bottom: 80px;
+
+    h4 {
+      font-size: 21px;
+    }
 
     form {
       width: $input-width;
@@ -72,7 +61,11 @@
   }
 
   .sign-up {
-    height: calc(100vh - 10vh);
+    padding-bottom: 80px;
+
+    h4 {
+      font-size: 21px;
+    }
 
     form {
       width: $input-width;
@@ -92,14 +85,16 @@
 
   .navbar {
     position: absolute;
-    height: 10%;
+    height: 10vh;
     color: $mvp-grey;
     z-index: 100;
 
     #sideBar {
       position: absolute;
       top: 10vh;
-      height: calc(100vh - 10%);
+      left: 0;
+      width: 150px;
+      height: 90vh;
     }
 
     .media {
@@ -134,7 +129,7 @@
 
   .top-nav {
     padding-left: 17.5%;
-    height: 10%;
+    height: 10vh;
     background-color: $mvp-blue;
 
     .fas {
@@ -142,50 +137,15 @@
     }
   }
 
-  @media screen and (min-width: 992px) {
-    .welcome {
-      font-size: 20px;
-    }
-
-    .home {
-      h3 {
-        font-size: 25px;
-      }
-    }
-
-    .navbar {
-      position: relative;
-      height: 100%;
-
-      #sideBar {
-        position: relative;
-        top: 0;
-        height: 100%;
-      }
-
-      span:last-child {
-        font-size: 14px;
-      }
-
-      .nav {
-        font-size: 16px;
-      }
-    }
-
-    .top-nav {
-      padding-left: 20px;
-    }
-  }
-
-  .main {
-    height: 90%;
-  }
-
   .progress-index {
     @include main;
 
     label {
       color: $mvp-grey;
+    }
+
+    small {
+      line-height: 0.8;
     }
   }
 
@@ -218,7 +178,12 @@
     }
 
     .list-group {
+      height: 10vh;
       line-height: 1;
+
+      span:last-child {
+        font-size: 12px;
+      }
     }
 
     .list-group-item {
@@ -229,6 +194,119 @@
   .overview {
     div:nth-of-type(2) {
       line-height: 1;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    > div {
+      height: 100vh;
+    }
+
+    .nav-main-wrap {
+      height: 100vh;
+    }
+
+    .welcome {
+      height: 90vh;
+    }
+
+    .main {
+      height: 90vh;
+    }
+
+    .home {
+      padding-bottom: 0;
+      height: 90vh;
+    }
+
+    .log-in {
+      padding-bottom: 0;
+      height: 90vh;
+
+      h4 {
+        font-size: 23px;
+      }
+    }
+
+    .sign-up {
+      padding-bottom: 10px;
+      height: 90vh;
+      overflow: scroll;
+
+      h4 {
+        padding-top: 35px;
+        font-size: 23px;
+      }
+    }
+
+    .navbar {
+      #sideBar {
+        width: 100%;
+      }
+    }
+
+    .progress-index,
+    .user-show {
+      height: 100%;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      background: $mvp-light;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .welcome {
+      font-size: 20px;
+    }
+
+    .home {
+      h3 {
+        font-size: 25px;
+      }
+    }
+
+    .sign-up {
+      padding-bottom: 0;
+      overflow: visible;
+
+      h4 {
+        padding-top: 0;
+      }
+    }
+
+    .navbar {
+      position: relative;
+      height: 100vh;
+
+      #sideBar {
+        position: relative;
+        top: 0;
+        height: 100vh;
+      }
+
+      span:last-child {
+        font-size: 14px;
+      }
+
+      .nav {
+        font-size: 16px;
+      }
+    }
+
+    .top-nav {
+      padding-left: 20px;
+    }
+
+    .profile-details {
+      .list-group {
+        span:last-child {
+          font-size: 14px;
+        }
+      }
     }
   }
 }

@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<section class="profile-details col-3 border-left">
+<section class="profile-details col-xs-12 col-md-3 border-left">
   <section class="overview text-center">
     <div class="d-flex justify-content-center align-items-center mb-3 pt-4">
       <%= follow_unfollow(@user) %>
@@ -29,17 +29,17 @@
       <span class="my-0"><%= "@#{@user.username}" %></span>
     </div>
 
-    <ul class="list-group list-group-horizontal rounded-0">
-      <li class="list-group-item bg-transparent py-3 rounded-0">
-        <span class="d-block"><%= @update_count %></span>
+    <ul class="list-group list-group-horizontal w-100 rounded-0 text-center">
+      <li class="list-group-item d-flex flex-column justify-content-center px-0 py-0 border-left-0 rounded-0 bg-transparent">
+        <span class="d-block mb-1"><%= @update_count %></span>
         <span><%= pluralize(@update_count, 'Update').remove(/\d+\s/) %></span>
       </li>
-      <li class="list-group-item bg-transparent py-3">
-        <span class="d-block"><%= following_count(@user) %></span>
+      <li class="list-group-item d-flex flex-column justify-content-center px-0 py-0 bg-transparent">
+        <span class="d-block mb-1"><%= following_count(@user) %></span>
         <span>Following</span>
       </li>
-      <li class="list-group-item bg-transparent py-3 rounded-0">
-        <span class="d-block"><%= follower_count(@user) %></span>
+      <li class="list-group-item d-flex flex-column justify-content-center px-0 py-0 border-right-0 rounded-0 bg-transparent">
+        <span class="d-block mb-1"><%= follower_count(@user) %></span>
         <span><%= pluralize(follower_count(@user), 'Follower').remove(/\d+\s/) %></span>
       </li>
     </ul>

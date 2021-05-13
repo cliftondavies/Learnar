@@ -124,6 +124,10 @@
 
     .nav-link {
       color: $mvp-grey;
+
+      &:hover {
+        color: $mvp-blue;
+      }
     }
   }
 
